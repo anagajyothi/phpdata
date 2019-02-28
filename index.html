@@ -1,0 +1,124 @@
+<html>
+<head>
+
+<script language="javascript">
+function validateForm(objReg){
+if(objReg.cid.value.length==0){
+		alert("Please enter Customer ID!");
+		objReg.cid.focus();
+		return false;
+		}
+var z = objReg.cid.value;
+		//alert("the z"+z);
+	    if(!z.match(/^\d+/))
+	        {
+	        alert("Please  enter only numeric characters  for your Customer ID number! (Allowed input:0-9)")
+	        objReg.cid.focus();
+			return false;
+
+		}
+	if(objReg.cfname.value.length==0){
+		alert("Please enter Customer Name!");
+		objReg.cfname.focus();
+		return false;
+		}
+	if(objReg.clname.value.length==0){
+		alert("Please enter Customer Name!");
+		objReg.clname.focus();
+		return false;
+		}
+	if(objReg.cmobile.value.length==0){
+		alert("Please enter phoneNo !");
+		objReg.cmobile.focus();
+		return false;
+		}
+
+		var z = objReg.cmobile.value;
+		//alert("the z"+z);
+	    if(!z.match(/^\d+/))
+	        {
+	        alert("Please  enter only numeric characters  for your phone number! (Allowed input:0-9)")
+	        objReg.cmobile.focus();
+			return false;
+
+		}
+	    var z = objReg.cmobile.value;
+		//alert("the z"+z);
+	    if(!z.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/))
+	        {
+	        alert("Please  enter 10 digit correct number for your phone number! (Allowed input:0-9)")
+	        objReg.cmobile.focus();
+			return false;
+
+		}
+
+	if(objReg.cemail.value.length==0){
+		alert("Please enter passenger email !");
+		objReg.cemail.focus();
+		return false;
+		}
+	var z = objReg.cemail.value;
+	//alert("the z"+z);
+    if(!z.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+        {
+        alert("Please  enter valid EMAIL ID")
+        objReg.cmobile.focus();
+		return false;
+
+	}
+	if(objReg.caddress.value.length==0){
+		alert("Please enter Address of Customer !");
+		objReg.caddress.focus();
+		return false;
+		}
+
+
+
+	return true;
+}
+</script>
+</head>
+
+
+<body bgcolor="wheat">
+<center>
+<img src="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/user-128.png">
+</center>
+
+
+<form name="UserForm" action="insert.php" onsubmit="return validateForm()" method="post">
+
+<center>
+
+
+
+<label for="cust">Customer Details</label><BR><BR>
+
+<label for="cid">Customer Id:</label><BR>
+    <input type="text" name="cid" maxlength="30" size="30" value=""placeholder="CUSTOMER ID"><BR><BR>
+
+    <label for="cfname">Customer Name:</label><BR>
+ <input type="text" name="cfname" maxlength="30" size="30" value=""placeholder="FIRST NAME"><BR><BR>
+
+
+<input type="text" name="clname" maxlength="30" size="30" value=""placeholder="LAST NAME"><BR><BR>
+<label for="cmobile">Customer Mobile number:</label><BR>
+<input type="text" name="cmobile" maxlength="30" size="30" value=""placeholder="MOBILE NUMBER"><BR><BR>
+<label for="cemail">Customer Email ID:</label><BR>
+<input type="text" name="cemail" maxlength="30" size="30" value=""placeholder="EMAIL ID"><BR><BR>
+<label for="caddress">Address:</label><BR>
+<textarea class="__message-area" id="feedbackMessage" name="caddress" placeholder="ADDRESS" autocomplete="off" rows="10"
+
+cols="32"></textarea><BR><BR>
+
+
+
+    <button type="submit" class="button" >Submit</button>
+</center></form>
+
+
+
+
+</body>
+
+</html>
